@@ -1,10 +1,14 @@
 const Home = () => {
   return (
     <div className="page">
-      <h1>Ciao</h1>
-      <p>I’m Buio, a Cyber Security & Digital Forensics graduate based in Ireland.</p>
+      <div className="profile-container">
+        <img src="/profile.png" alt="Buio Profile" className="profile-pic" />
+      </div>
+
+      <h1>Ciao, I'm Buio</h1>
+      <h4>Cyber Security & Digital Forensics graduate based in Ireland.</h4>
       <br />
-      <p>Welcome to my website</p>
+      <h4>Welcome to my website</h4>
     </div>
   );
 };

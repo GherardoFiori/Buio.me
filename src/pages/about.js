@@ -10,13 +10,17 @@ const About = () => {
 
   return (
     <div className="page">
-      <h2>About Me</h2>
-      <p>
+      <h1>whoami</h1>
+      <h4>
         I'm Buio, originally from Italy, currently living in Ireland. Recently graduated in Cyber Security and Digital Forensics.
-        Passionate about ethical hacking, digital investigation, and cyber defence.
-      </p>
+        I am a big fan of partecipating in Capture The Flag (CTF) competitions and learning new stuff as you can notice by my many
+        certificates. 
+        <br>
+        </br>
+        Also working towards Networking+ and SAL1 Certificate.
+      </h4>
 
-      <h3>Certificates</h3>
+      <h1>Certificates</h1>
       <div className="cert-grid">
         {certImages.map((cert, index) => (
           <div key={index} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>

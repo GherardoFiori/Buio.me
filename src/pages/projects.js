@@ -1,7 +1,7 @@
 const projectList = [
   {
     title: "AI Detection of Malicious Browser Extensions",
-    description: "A Python-based tool for static malware analysis, extracting IOCs, hashes, and metadata.",
+    description: "A Python-based tool for analysing browser extensions by simply supplying it a Store URL",
     github: "https://github.com/GherardoFiori/AI-detection-of-malicious-browser-extensions",
     image: "./exterminai.png", 
   },

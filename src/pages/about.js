@@ -11,10 +11,19 @@ const skills = [
   { icon: '/css.png', name: 'CSS' },
   { icon: '/html.png', name: 'HTML' },
   { icon: '/react.png', name: 'React' },
+  { icon: '/vercel.png', name: 'Vercel' },
   { icon: '/linux.png', name: 'Linux' },
   { icon: '/github.png', name: 'Github' },
   { icon: '/hacker.png', name: 'Ethical Hacking' },
   { icon: '/vulnerability.png', name: 'Vulnerability Scanning' },
+  { icon: '/nmap.png', name: 'Nmap' },
+  { icon: '/wireshark.png', name: 'Wireshark' },
+  { icon: '/cloud.png', name: 'Cloud' },
+  { icon: '/php.png', name: 'PHP' },
+  { icon: '/hackthebox2.png', name: 'HackTheBox' },
+  { icon: '/tryhackme.png', name: 'TryHackMe' },
+  { icon: '/ctf.png', name: 'Capture The Flag' },
+  { icon: '/blueteam.png', name: 'Blue Team Enthusiast' },
   
 ];
 
@@ -33,7 +42,9 @@ const About = () => {
         Also working towards Networking+ and SAL1 Certificate.
       </h4>
 
-      <h1>Skills</h1>
+       <img src="/tryhackme profile.png" alt="buio.sante Profile" className="thmprofile" />
+
+      <h1>Experience</h1>
       <div className="skills-bar">
         {skills.map((skill, index) => (
                <div

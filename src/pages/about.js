@@ -38,11 +38,11 @@ const About = () => {
         I'm Buio, originally from Italy, currently living in Ireland. Recently graduated in Cyber Security and Digital Forensics.
         I am a big fan of participating in Capture The Flag (CTF) competitions and learning new stuff as you can notice by my many
         certificates.
-        <br />
-        Also working towards Networking+ and SAL1 Certificate.
       </h4>
-
+      <h4>Working towards Network+ and SAL1 Certificate.</h4>
+        <div className="thmprofile-wrapper">
        <img src="/tryhackme profile.png" alt="buio.sante Profile" className="thmprofile" />
+       </div>
 
       <h1>Experience</h1>
       <div className="skills-bar">

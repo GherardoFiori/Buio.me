@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDiscord, FaEnvelope} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -28,6 +28,12 @@ const Footer = () => {
             className="hover:text-indigo-400"
           >
             <FaDiscord />
+          </a>
+          <a
+            href="mailto:gherardofiori@gmail.com"
+            className="hover:text-red-400"
+          >
+            <FaEnvelope />
           </a>
         </div>
         <p className="text-sm text-gray-500">

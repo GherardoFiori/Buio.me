@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const certImages = Array.from({ length: 13 }, (_, i) => ({
+const certImages = Array.from({ length: 14 }, (_, i) => ({
   src: `/certificates/cert${i + 1}.png`,
   alt: `Certificate ${i + 1}`
 }));

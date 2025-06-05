@@ -11,7 +11,7 @@ body {
 
 .page {
   padding: 2rem;
-  max-width: 900px;
+  max-width: 1050px;
   margin: auto;
 }
 
@@ -91,12 +91,53 @@ body {
   }
 }
 
+@media (max-width: 1200px) {
+  .cert-grid {
+    grid-template-columns: repeat(3, auto); /* Change to 3 columns */
+    /* Remove width: fit-content and margins if you want it to fill available space again */
+    width: 100%; /* Let it take full width of its parent (.page) */
+    /* No need for margin auto here, as it will span 100% of the centered .page */
+  }
+
+  .cert-slot img {
+    width: 100%; /* Make images fill their 3-column slots */
+    height: 180px; /* Slightly adjust height for smaller images */
+  }
+}
+
+/* For screens smaller than, say, 900px (typical tablet portrait) */
+@media (max-width: 900px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, auto); /* Change to 2 columns */
+  }
+
+  .cert-slot img {
+    height: 160px; /* Further adjust height */
+  }
+}
+
+/* For very small screens / phones (e.g., max 600px) */
+@media (max-width: 600px) {
+  .cert-grid {
+    grid-template-columns: 1fr; /* Change to a single column */
+    /* This will also handle the width: 100% correctly, as 1fr fills the space */
+    gap: 1rem; /* Smaller gap for phones */
+  }
+
+  .cert-slot img {
+    width: 100%; /* Images always fill the single column */
+    height: auto; /* Let height adjust proportionally */
+    max-height: 250px; /* Prevent excessively tall images on very narrow screens */
+  }
+}
+
+
 
 
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  grid-template-rows: repeat(3, auto); 
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(4, auto); 
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -104,12 +145,13 @@ body {
 .cert-slot img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit:inherit;
   border-radius: 8px;
   border: 1px solid #444;
   box-shadow: 0 0 12px rgba(243, 156, 18, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  
 }
 
 .cert-slot img:hover {

@@ -147,6 +147,9 @@ body {
     height: auto; 
 }
 
+.clickable-image-in-grid {
+    cursor: pointer; 
+}
 
 .tpot-list {
     list-style-type: '🔴 '; 

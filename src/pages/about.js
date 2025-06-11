@@ -38,7 +38,7 @@ const About = () => {
     <div className="page">
       <h1>whoami</h1>
       <h4>
-        I'm Buio, originally from Italy, currently living in Ireland. Recently graduated in Cyber Security and Digital Forensics.
+        I'm Gherardo, originally from Italy, currently living in Ireland. Recently graduated in Cyber Security and Digital Forensics.
         I am a big fan of participating in Capture The Flag (CTF) competitions and learning new stuff as you can notice by my many
         certificates.
       </h4>
@@ -46,6 +46,37 @@ const About = () => {
         <div className="thmprofile-wrapper">
        <img src="/tryhackme profile.png" alt="buio.sante Profile" className="thmprofile" />
        </div>
+
+      <h1>Events</h1>
+      <h4>I truly enjoy going to events, information security conferences or CTF events. If it's available and I can reach it, you will see me there. Here are recent ones.</h4>
+      <ul className="Events-list">
+            <li>Dub|Sec Meetups</li>
+            <li>HackInBo. Bologna 2025</li>
+            <li>Bsides Dublin 2025</li>
+            <li>ZeroDays 2025 👥 Higher Score on my team</li>
+            <li>Cyber Security AI & Software Devlopment 2025</li>
+            <li>Naughty or Nice CTF (ZeroDays) Blancherstown 2024 🏆 1st Place Winner</li>
+            <li>ZeroDays 2024 👥 Higher Score on my team</li>
+            <li>Bsides Dublin 2024</li>
+            <li>IRISSCERT 2024 and CTF 🥈 2nd Place Winner</li>
+            <li>Cyber Expo & Conference 2024</li>
+       </ul>
+      <h4>The ones I would like to go in the future.</h4>
+      <ul className="Events-list">
+            <li>WHY2025</li>
+            <li>RomHack Rome</li>
+            <li>Bsides London</li>
+            <li>Bsides Frankfurt</li>
+            <li>Cbase Berlin</li>
+       </ul>
+
+       <h1>Volunteering</h1>
+       <h4>The Volunteering I did over the past two years.</h4>
+      <ul className="Events-list">
+            <li>Naughty or Nice CTF on the day helper</li>
+            <li>Ethical Hacker Society's Event Organizer</li>
+            <li>CTF on the day helper for Cyber Security students from france</li>
+       </ul>
 
       <h1>Experience</h1>
       <div className="skills-bar">

@@ -4,6 +4,7 @@ const projectList = [
   {
     title: "AI Detection of Malicious Browser Extensions",
     description: "A Python-based tool for analysing browser extensions by simply supplying it a Store URL",
+    website: "https://exterminai.com",
     github: "https://github.com/GherardoFiori/AI-detection-of-malicious-browser-extensions",
     image: "./exterminai.png", 
   },
@@ -19,6 +20,18 @@ const projectList = [
     github: "/Tpot",
     image: "./tpot.png",
   },
+  {
+    title: "DeepPhish AI",
+    description: "CLI tool to detect phishing emails with AI.",
+    github: "",
+    image: "./DeepPhishArt.png",
+  },
+  {
+    title: "Home Lab",
+    description: "Setting up a home lab to run Virtual Machines, Cloud Storage and Vulnerable Machines for Pen testing and much more.",
+    github: "",
+    image: "./Coming Soon.png",
+  },
 ];
 
 const Projects = () => {
@@ -33,6 +46,18 @@ const Projects = () => {
             )}
             <h3>{project.title}</h3>
             <p>{project.description}</p>
+            {project.website && ( 
+              <a
+                href={project.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-link" 
+              >
+                Visit website →
+              </a>
+            )}
+
+            
             <a
               href={project.github}
               target="_blank"

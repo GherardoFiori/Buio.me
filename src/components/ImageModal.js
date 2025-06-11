@@ -2,10 +2,6 @@ import React, { useEffect } from 'react';
 import './ImageModal.css';
 
 const ImageModal = ({ src, alt, caption, onClose }) => {
-  // REMOVE: if (!src) return null;
-  // This check is now handled by the parent component (tpot.js)
-  // which only renders ImageModal when 'modalImage' is not null.
-
   useEffect(() => {
     const handleEscapeKey = (event) => {
       if (event.key === 'Escape') {
@@ -20,8 +16,7 @@ const ImageModal = ({ src, alt, caption, onClose }) => {
     };
   }, [onClose]);
 
-  // When this component is rendered, it's guaranteed that 'src' is available
-  // because the parent component (tpot.js) handles the conditional rendering.
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>

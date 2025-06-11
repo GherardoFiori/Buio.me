@@ -1,3 +1,5 @@
+import Tpot from '../pages/tpot.js';
+
 const projectList = [
   {
     title: "AI Detection of Malicious Browser Extensions",
@@ -10,6 +12,12 @@ const projectList = [
     description: "This very website, built using React and custom CSS to showcase my work and certifications.",
     github: "https://github.com/GherardoFiori/Buio.me",
     image: "./portafolio.png",
+  },
+  {
+    title: "TPOT Honeypots",
+    description: "Setup honeypots system to analyse millions of attacks",
+    github: "/Tpot",
+    image: "./tpot.png",
   },
 ];
 
@@ -31,7 +39,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="github-link"
             >
-              View on GitHub →
+              Check it out here →
             </a>
           </div>
         ))}

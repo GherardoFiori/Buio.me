@@ -1,0 +1,115 @@
+.navbar {
+  height: auto;
+  background-color: #111;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #444;
+  position: relative;
+}
+
+.nav-logo-img {
+  height: 60px;
+  object-fit: contain;
+}
+
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  color: #c7c5c5;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #ffdd99;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .links a {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #222;
+  }
+
+  .navbar {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cert-grid {
+    grid-template-columns: repeat(3, auto); /* Change to 3 columns */
+    /* Remove width: fit-content and margins if you want it to fill available space again */
+    width: 100%; /* Let it take full width of its parent (.page) */
+    /* No need for margin auto here, as it will span 100% of the centered .page */
+  }
+
+  .cert-slot img {
+    width: 100%; /* Make images fill their 3-column slots */
+    height: 180px; /* Slightly adjust height for smaller images */
+  }
+}
+
+/* For screens smaller than, say, 900px (typical tablet portrait) */
+@media (max-width: 900px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, auto); /* Change to 2 columns */
+  }
+
+  .cert-slot img {
+    height: 160px; /* Further adjust height */
+  }
+}
+
+/* For very small screens / phones (e.g., max 600px) */
+@media (max-width: 600px) {
+  .cert-grid {
+    grid-template-columns: 1fr; /* Change to a single column */
+    /* This will also handle the width: 100% correctly, as 1fr fills the space */
+    gap: 1rem; /* Smaller gap for phones */
+  }
+
+  .cert-slot img {
+    width: 100%; /* Images always fill the single column */
+    height: auto; /* Let height adjust proportionally */
+    max-height: 250px; /* Prevent excessively tall images on very narrow screens */
+  }
+}

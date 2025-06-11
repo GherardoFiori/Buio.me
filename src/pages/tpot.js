@@ -93,7 +93,7 @@ const Tpot = () => {
               src="/Tpot/Login credentials.png"
               alt="Login Credentials"
               className="tpot-image clickable-image-in-grid" 
-              onClick={() => openModal("/Tpot/Login Credentials.png", "Login Credentials", "Collection of login credentials attempted.")}
+              onClick={() => openModal("/Tpot/Login credentials.png", "Login Credentials", "Collection of login credentials attempted.")}
             />
             <p className="image-caption">Collection of login credentials attemopted.</p>
           </div>
@@ -113,7 +113,7 @@ const Tpot = () => {
               src="/Tpot/Port.png"
               alt="Most Attacked Ports"
               className="tpot-image clickable-image-in-grid"
-              onClick={() => openModal("/Tpot/port.png", "Most Attacked Ports", "Chart illustrating the top Most Attacked Ports.")}
+              onClick={() => openModal("/Tpot/Port.png", "Most Attacked Ports", "Chart illustrating the top Most Attacked Ports.")}
             />
             <p className="image-caption">Chart illustrating the top Most Attacked Ports.</p>
           </div>

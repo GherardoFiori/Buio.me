@@ -90,7 +90,7 @@ const Tpot = () => {
 
           <div className="tpot-image-wrapper">
             <img
-              src="/Tpot/Login Credentials.png"
+              src="/Tpot/Login credentials.png"
               alt="Login Credentials"
               className="tpot-image clickable-image-in-grid" 
               onClick={() => openModal("/Tpot/Login Credentials.png", "Login Credentials", "Collection of login credentials attempted.")}
@@ -110,7 +110,7 @@ const Tpot = () => {
 
           <div className="tpot-image-wrapper">
             <img
-              src="/Tpot/port.png"
+              src="/Tpot/Port.png"
               alt="Most Attacked Ports"
               className="tpot-image clickable-image-in-grid"
               onClick={() => openModal("/Tpot/port.png", "Most Attacked Ports", "Chart illustrating the top Most Attacked Ports.")}

@@ -27,6 +27,8 @@ const skills = [
   { icon: '/skills logo/virtualbox.png', name: 'Virtual Machines' },
   { icon: '/skills logo/grc.png', name: 'Governance, Risk, and Compliance' },
   { icon: '/skills logo/appsecurity.png', name: 'Application Security' },
+  { icon: '/skills logo/sophos.png', name: 'Sophos' },
+  { icon: '/skills logo/tines.png', name: 'Tines' },
   
 ];
 

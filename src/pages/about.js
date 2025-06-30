@@ -5,6 +5,11 @@ const certImages = Array.from({ length: 14 }, (_, i) => ({
   alt: `Certificate ${i + 1}`
 }));
 
+const toolCertImages = Array.from({ length: 4 }, (_, i) => ({
+  src: `/toolcertificate/cert${i + 1}.png`,
+  alt: `Certificate ${i + 1}`
+}));
+
 const skills = [
   { icon: '/skills logo/python.png', name: 'Python' },
   { icon: '/skills logo/java-script.png', name: 'JavaScript' },
@@ -101,6 +106,15 @@ const About = () => {
       <h1>Certificates</h1>
       <div className="cert-grid">
         {certImages.map((cert, index) => (
+          <div key={index} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>
+            <img src={cert.src} alt={cert.alt} />
+          </div>
+        ))}
+      </div>
+
+            <h1>Tool Certificates</h1>
+      <div className="cert-grid">
+        {toolCertImages.map((cert, index) => (
           <div key={index} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>
             <img src={cert.src} alt={cert.alt} />
           </div>

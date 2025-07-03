@@ -5,7 +5,7 @@ const certImages = Array.from({ length: 14 }, (_, i) => ({
   alt: `Certificate ${i + 1}`
 }));
 
-const toolCertImages = Array.from({ length: 4 }, (_, i) => ({
+const toolCertImages = Array.from({ length: 5 }, (_, i) => ({
   src: `/toolcertificate/cert${i + 1}.png`,
   alt: `Certificate ${i + 1}`
 }));

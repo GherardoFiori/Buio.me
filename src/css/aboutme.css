@@ -111,3 +111,27 @@
 .Events-list {
   list-style-type: none;
 }
+
+a:link {
+  color: rgb(161, 143, 143);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(161, 143, 143);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}

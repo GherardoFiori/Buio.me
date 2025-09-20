@@ -5,7 +5,7 @@ const certImages = Array.from({ length: 14 }, (_, i) => ({
   alt: `Certificate ${i + 1}`
 }));
 
-const toolCertImages = Array.from({ length: 5 }, (_, i) => ({
+const toolCertImages = Array.from({ length: 13 }, (_, i) => ({
   src: `/toolcertificate/cert${i + 1}.png`,
   alt: `Certificate ${i + 1}`
 }));
@@ -34,6 +34,7 @@ const skills = [
   { icon: '/skills logo/appsecurity.png', name: 'Application Security' },
   { icon: '/skills logo/sophos.png', name: 'Sophos' },
   { icon: '/skills logo/tines.png', name: 'Tines' },
+  { icon: '/skills logo/crowdstrike.png', name: 'crowdstrike' },
   
 ];
 
@@ -47,12 +48,16 @@ const About = () => {
       <h4>
         I'm Gherardo, originally from Italy, currently living in Ireland. Recently graduated in Cyber Security and Digital Forensics.
         I am a big fan of participating in Capture The Flag (CTF) competitions and learning new stuff as you can notice by my many
-        certificates.
+        certificates. 
+        <br></br>
+         Currently a SOC Analyst at CommSec
       </h4>
       <h4>Working towards Network+ and SAL1 Certificate.</h4>
         <div className="thmprofile-wrapper">
        <img src="/tryhackme profile.png" alt="buio.sante Profile" className="thmprofile" />
        </div>
+
+              <p>Add me as a friend on TryHackMe  <a href="https://tryhackme.com/p/buio.sante">here!</a></p>
 
       <h1>Events</h1>
       <h4>I truly enjoy going to events, information security conferences or CTF events. If it's available and I can reach it, you will see me there. Here are recent ones.</h4>

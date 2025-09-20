@@ -7,7 +7,7 @@ const Home = () => {
 
       <h1>Ciao, I'm Buio</h1>
       <h4>Cyber Security & Digital Forensics graduate based in Ireland.</h4>
-      <br />
+      <h1>SOC Analyst @ CommSec</h1>
       <h4>Welcome to my website</h4>
     </div>
   );

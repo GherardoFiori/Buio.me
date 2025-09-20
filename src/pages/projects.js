@@ -1,5 +1,3 @@
-import Tpot from '../pages/tpot.js';
-
 const projectList = [
   {
     title: "AI Detection of Malicious Browser Extensions",

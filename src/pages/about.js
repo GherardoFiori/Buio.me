@@ -5,7 +5,7 @@ const certImages = Array.from({ length: 14 }, (_, i) => ({
   alt: `Certificate ${i + 1}`
 }));
 
-const toolCertImages = Array.from({ length: 13 }, (_, i) => ({
+const toolCertImages = Array.from({ length: 14 }, (_, i) => ({
   src: `/toolcertificate/cert${i + 1}.png`,
   alt: `Certificate ${i + 1}`
 }));
@@ -52,7 +52,7 @@ const About = () => {
         <br></br>
          Currently a SOC Analyst at CommSec
       </h4>
-      <h4>Working towards Network+ and SAL1 Certificate.</h4>
+      <h4>Working towards Blue Team Level 1 and SAL1 Certificate.</h4>
         <div className="thmprofile-wrapper">
        <img src="/tryhackme profile.png" alt="buio.sante Profile" className="thmprofile" />
        </div>
@@ -62,6 +62,8 @@ const About = () => {
       <h1>Events</h1>
       <h4>I truly enjoy going to events, information security conferences or CTF events. If it's available and I can reach it, you will see me there. Here are recent ones.</h4>
       <ul className="Events-list">
+            <li>Bsides Dublin 2026</li>
+            <li>Bsides Galway 2026</li>
             <li>Dub|Sec Meetups</li>
             <li>HackInBo. Bologna 2025</li>
             <li>Bsides Dublin 2025</li>

@@ -1,6 +1,6 @@
 const projectList = [
   {
-    title: "AI Detection of Malicious Browser Extensions",
+    title: "AI Detection of Malicious Browser Extensions         - UNDER MAINTANANCE",
     description: "A Python-based tool for analysing browser extensions by simply supplying it a Store URL",
     github: "https://exterminai.com",
     image: "./exterminai.png", 
@@ -16,11 +16,6 @@ const projectList = [
     description: "Setup honeypots system to analyse millions of attacks",
     github: "/Tpot",
     image: "./tpot.png",
-  },
-  {
-    title: "DeepPhish AI",
-    description: "CLI tool to detect phishing emails with AI. COMING SOON",
-    image: "./DeepPhishArt.png",
   },
   {
     title: "Home Lab",

@@ -1,25 +1,27 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../css/navbar.css';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const close = () => setMenuOpen(false);
 
   return (
     <nav className="navbar">
-      <div className="nav-logo">
-        <Link to="/" className="flex items-center space-x-2">
-          <img src="/logo.png" alt="Buio Logo" className="nav-logo-img" />
-        </Link>
-      </div>
+      <Link to="/" onClick={close}>
+        <img src="/logo.png" alt="Buio" className="nav-logo-img" />
+      </Link>
 
-      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
+      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+        <span />
+        <span />
+        <span />
       </button>
 
-      <div className={`links ${menuOpen ? 'open' : ''}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>HOME</Link>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>ABOUT ME</Link>
-        <Link to="/projects" onClick={() => setMenuOpen(false)}>PROJECTS</Link>
+      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <Link to="/" onClick={close}>Home</Link>
+        <Link to="/about" onClick={close}>About</Link>
+        <Link to="/projects" onClick={close}>Projects</Link>
       </div>
     </nav>
   );

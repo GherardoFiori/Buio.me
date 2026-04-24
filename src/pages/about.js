@@ -1,13 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import '../css/aboutme.css';
+
+const TERMINAL_TEXT = 'whoami';
+
+const TerminalHeading = () => {
+  const [displayed, setDisplayed] = useState('');
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    if (displayed.length < TERMINAL_TEXT.length) {
+      const t = setTimeout(() => setDisplayed(TERMINAL_TEXT.slice(0, displayed.length + 1)), 90);
+      return () => clearTimeout(t);
+    } else {
+      setDone(true);
+    }
+  }, [displayed]);
+
+  return (
+    <h1 className="terminal-heading">
+      <span className="terminal-prompt">$ </span>
+      {displayed}
+      <span className={done ? 'terminal-cursor blink' : 'terminal-cursor'}>▌</span>
+    </h1>
+  );
+};
 
 const certImages = Array.from({ length: 14 }, (_, i) => ({
   src: `/certificates/cert${i + 1}.png`,
-  alt: `Certificate ${i + 1}`
+  alt: `Certificate ${i + 1}`,
 }));
 
 const toolCertImages = Array.from({ length: 14 }, (_, i) => ({
   src: `/toolcertificate/cert${i + 1}.png`,
-  alt: `Certificate ${i + 1}`
+  alt: `Tool Certificate ${i + 1}`,
 }));
 
 const skills = [
@@ -19,23 +44,48 @@ const skills = [
   { icon: '/skills logo/react.png', name: 'React' },
   { icon: '/skills logo/vercel.png', name: 'Vercel' },
   { icon: '/skills logo/linux.png', name: 'Linux' },
-  { icon: '/skills logo/github.png', name: 'Github' },
-  { icon: '/skills logo/hacker.png', name: 'Ethical Hacking' },
+  { icon: '/skills logo/github.png', name: 'GitHub' },
   { icon: '/skills logo/vulnerability.png', name: 'Vulnerability Scanning' },
-  { icon: '/skills logo/nmap.png', name: 'Nmap' },
-  { icon: '/skills logo/wireshark.png', name: 'Wireshark' },
   { icon: '/skills logo/cloud.png', name: 'Cloud' },
   { icon: '/skills logo/hackthebox2.png', name: 'HackTheBox' },
   { icon: '/skills logo/tryhackme.png', name: 'TryHackMe' },
   { icon: '/skills logo/ctf.png', name: 'Capture The Flag' },
-  { icon: '/skills logo/blueteam.png', name: 'Blue Team Enthusiast' },
   { icon: '/skills logo/virtualbox.png', name: 'Virtual Machines' },
-  { icon: '/skills logo/grc.png', name: 'Governance, Risk, and Compliance' },
-  { icon: '/skills logo/appsecurity.png', name: 'Application Security' },
+  { icon: '/skills logo/grc.png', name: 'GRC' },
   { icon: '/skills logo/sophos.png', name: 'Sophos' },
   { icon: '/skills logo/tines.png', name: 'Tines' },
-  { icon: '/skills logo/crowdstrike.png', name: 'crowdstrike' },
-  
+  { icon: '/skills logo/crowdstrike.png', name: 'CrowdStrike' }
+ // { icon: '/skills logo/fortinet.png', name: 'Fortinet' },
+ // { icon: '/skills logo/automation.png', name: 'Automation' },
+];
+
+const pastEvents = [
+  'Bsides Dublin 2026',
+  'Bsides Galway 2026',
+  'Dub|Sec Meetups',
+  'HackInBo — Bologna 2025',
+  'Bsides Dublin 2025',
+  'ZeroDays 2025 👥 Higher Score on my team',
+  'Cyber Security AI & Software Development 2025',
+  'Naughty or Nice CTF (ZeroDays) Blanchardstown 2024 🏆 1st Place',
+  'ZeroDays 2024 👥 Higher Score on my team',
+  'Bsides Dublin 2024',
+  'IRISSCERT 2024 and CTF 🥈 2nd Place',
+  'Cyber Expo & Conference 2024',
+];
+
+const futureEvents = [
+  'WHY2025',
+  'RomHack — Rome',
+  'Bsides London',
+  'Bsides Frankfurt',
+  'Cbase — Berlin',
+];
+
+const volunteering = [
+  'Naughty or Nice CTF — on the day helper',
+  "Ethical Hacker Society's Event Organizer",
+  'CTF on the day helper for Cyber Security students from France',
 ];
 
 const About = () => {
@@ -44,85 +94,66 @@ const About = () => {
 
   return (
     <div className="page">
-      <h1>whoami</h1>
-      <h4>
-        I'm Gherardo, originally from Italy, currently living in Ireland. Recently graduated in Cyber Security and Digital Forensics.
-        I am a big fan of participating in Capture The Flag (CTF) competitions and learning new stuff as you can notice by my many
-        certificates. 
-        <br></br>
-         Currently a SOC Analyst at CommSec
-      </h4>
-      <h4>Working towards Blue Team Level 1 and SAL1 Certificate.</h4>
-        <div className="thmprofile-wrapper">
-       <img src="/tryhackme profile.png" alt="buio.sante Profile" className="thmprofile" />
-       </div>
+      <TerminalHeading />
+      <p className="about-bio">
+        I'm Gherardo, originally from Italy, currently living in Ireland. Graduated in
+        Cyber Security and Digital Forensics. I'm a big fan of CTF competitions and always
+        learning new things. Recently addicted to automation and documentation. Researching Malicious Browser Extensions.
+      </p>
 
-              <p>Add me as a friend on TryHackMe  <a href="https://tryhackme.com/p/buio.sante">here!</a></p>
+      <div className="thmprofile-wrapper">
+        <img src="/tryhackme profile.png" alt="buio.sante TryHackMe profile" className="thmprofile" />
+        <p className="thm-link">
+          Add me on TryHackMe — <a href="https://tryhackme.com/p/buio.sante" target="_blank" rel="noopener noreferrer">buio.sante</a>
+        </p>
+      </div>
 
-      <h1>Events</h1>
-      <h4>I truly enjoy going to events, information security conferences or CTF events. If it's available and I can reach it, you will see me there. Here are recent ones.</h4>
-      <ul className="Events-list">
-            <li>Bsides Dublin 2026</li>
-            <li>Bsides Galway 2026</li>
-            <li>Dub|Sec Meetups</li>
-            <li>HackInBo. Bologna 2025</li>
-            <li>Bsides Dublin 2025</li>
-            <li>ZeroDays 2025 👥 Higher Score on my team</li>
-            <li>Cyber Security AI & Software Devlopment 2025</li>
-            <li>Naughty or Nice CTF (ZeroDays) Blancherstown 2024 🏆 1st Place Winner</li>
-            <li>ZeroDays 2024 👥 Higher Score on my team</li>
-            <li>Bsides Dublin 2024</li>
-            <li>IRISSCERT 2024 and CTF 🥈 2nd Place Winner</li>
-            <li>Cyber Expo & Conference 2024</li>
-       </ul>
-      <h4>The ones I would like to go in the future.</h4>
-      <ul className="Events-list">
-            <li>WHY2025</li>
-            <li>RomHack Rome</li>
-            <li>Bsides London</li>
-            <li>Bsides Frankfurt</li>
-            <li>Cbase Berlin</li>
-       </ul>
+      <h2 className="section-heading">Events</h2>
+      <p className="about-bio">
+        I love attending information security conferences and CTF events. If it's reachable, you'll see me there.
+      </p>
+      <p className="events-subheading">Past events</p>
+      <ul className="events-list">
+        {pastEvents.map((e, i) => <li key={i}>{e}</li>)}
+      </ul>
+      <p className="events-subheading">On the wishlist</p>
+      <ul className="events-list">
+        {futureEvents.map((e, i) => <li key={i}>{e}</li>)}
+      </ul>
 
-       <h1>Volunteering</h1>
-       <h4>The Volunteering I did over the past two years.</h4>
-      <ul className="Events-list">
-            <li>Naughty or Nice CTF on the day helper</li>
-            <li>Ethical Hacker Society's Event Organizer</li>
-            <li>CTF on the day helper for Cyber Security students from france</li>
-       </ul>
+      <h2 className="section-heading">Volunteering</h2>
+      <ul className="events-list">
+        {volunteering.map((v, i) => <li key={i}>{v}</li>)}
+      </ul>
 
-      <h1>Experience</h1>
+      <h2 className="section-heading">Experience</h2>
       <div className="skills-bar">
-        {skills.map((skill, index) => (
-               <div
-                key={index}
-                className={`skill-icon ${hoveredSkill === index ? 'hovered' : ''}`}
-                onMouseEnter={() => setHoveredSkill(index)}
-                onMouseLeave={() => setHoveredSkill(null)}
-                >
-                <img src={skill.icon} alt={skill.name} className="skill-img" />
-                {hoveredSkill === index && (
-                    <span className="skill-tooltip">{skill.name}</span>
-                )}
-                </div>
+        {skills.map((skill, i) => (
+          <div
+            key={i}
+            className="skill-icon"
+            onMouseEnter={() => setHoveredSkill(i)}
+            onMouseLeave={() => setHoveredSkill(null)}
+          >
+            <img src={skill.icon} alt={skill.name} className="skill-img" />
+            {hoveredSkill === i && <span className="skill-tooltip">{skill.name}</span>}
+          </div>
+        ))}
+      </div>
 
-                    ))}
-                </div>
-
-      <h1>Certificates</h1>
+      <h2 className="section-heading">Certificates</h2>
       <div className="cert-grid">
-        {certImages.map((cert, index) => (
-          <div key={index} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>
+        {certImages.map((cert, i) => (
+          <div key={i} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>
             <img src={cert.src} alt={cert.alt} />
           </div>
         ))}
       </div>
 
-            <h1>Tool Certificates</h1>
+      <h2 className="section-heading">Tool Certificates</h2>
       <div className="cert-grid">
-        {toolCertImages.map((cert, index) => (
-          <div key={index} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>
+        {toolCertImages.map((cert, i) => (
+          <div key={i} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>
             <img src={cert.src} alt={cert.alt} />
           </div>
         ))}

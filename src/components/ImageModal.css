@@ -1,80 +1,70 @@
-
-
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.85); 
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.88);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  opacity: 0; 
-  animation: fadeIn 0.3s forwards; 
+  animation: fadeIn 150ms ease forwards;
 }
 
 .modal-content {
   position: relative;
-  background-color: #1a1a1a; 
-  padding: 20px;
-  border-radius: 15px; 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); 
+  background-color: var(--bg-card);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
   max-width: 90vw;
-  max-height: 90vh; 
+  max-height: 90vh;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  animation: slideIn 0.3s forwards; 
-  transform: translateY(20px); 
-  border: 1px solid rgba(245, 197, 24, 0.2); 
+  animation: slideIn 150ms ease forwards;
 }
 
 .modal-image {
   max-width: 100%;
-  max-height: 80vh; 
-  height: auto; 
+  max-height: 80vh;
+  height: auto;
   display: block;
-  border-radius: 10px; 
-  object-fit: contain; 
+  border-radius: var(--radius);
+  object-fit: contain;
 }
 
 .modal-caption {
-  color: #c0c0c0;
-  margin-top: 15px;
-  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
   text-align: center;
   font-style: italic;
-  max-width: 90%;
 }
 
 .modal-close-button {
   position: absolute;
-  top: 15px; 
-  right: 15px;
+  top: 0.75rem;
+  right: 0.75rem;
   background: none;
   border: none;
-  color: #fff;
-  font-size: 3rem; 
+  color: var(--text-muted);
+  font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1001; 
-  transition: color 0.2s ease-in-out;
-  padding: 0; 
-  line-height: 1; 
+  line-height: 1;
+  padding: 0.25rem;
+  transition: color var(--transition);
 }
 
 .modal-close-button:hover {
-  color: #ff0000; 
+  color: var(--text);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes slideIn {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
 }

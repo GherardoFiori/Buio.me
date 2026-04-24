@@ -1,115 +1,95 @@
 .navbar {
-  height: auto;
-  background-color: #111;
-  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #444;
-  position: relative;
+  justify-content: space-between;
 }
 
 .nav-logo-img {
-  height: 60px;
+  height: 36px;
   object-fit: contain;
+  display: block;
 }
 
-
-.nav-logo {
+.nav-links {
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 
+.nav-links a {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
 
 .hamburger {
   display: none;
-  font-size: 2.5rem;
-  color: #c7c5c5;
+  flex-direction: column;
+  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
+  padding: 4px;
 }
 
-
-.links {
-  display: flex;
-  gap: 1rem;
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-muted);
+  border-radius: 2px;
+  transition: background-color var(--transition);
 }
 
-.links a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 1.3rem;
-  transition: color 0.3s ease;
-}
-
-.links a:hover {
-  color: #ffdd99;
+.hamburger:hover span {
+  background-color: var(--text);
 }
 
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
-  }
-
-  .links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .links.open {
     display: flex;
   }
 
-  .links a {
-    padding: 0.75rem 1rem;
-    border-top: 1px solid #222;
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 1rem 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
   }
 
   .navbar {
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 1200px) {
-  .cert-grid {
-    grid-template-columns: repeat(3, auto); /* Change to 3 columns */
-    /* Remove width: fit-content and margins if you want it to fill available space again */
-    width: 100%; /* Let it take full width of its parent (.page) */
-    /* No need for margin auto here, as it will span 100% of the centered .page */
-  }
-
-  .cert-slot img {
-    width: 100%; /* Make images fill their 3-column slots */
-    height: 180px; /* Slightly adjust height for smaller images */
-  }
-}
-
-/* For screens smaller than, say, 900px (typical tablet portrait) */
-@media (max-width: 900px) {
-  .cert-grid {
-    grid-template-columns: repeat(2, auto); /* Change to 2 columns */
-  }
-
-  .cert-slot img {
-    height: 160px; /* Further adjust height */
-  }
-}
-
-/* For very small screens / phones (e.g., max 600px) */
-@media (max-width: 600px) {
-  .cert-grid {
-    grid-template-columns: 1fr; /* Change to a single column */
-    /* This will also handle the width: 100% correctly, as 1fr fills the space */
-    gap: 1rem; /* Smaller gap for phones */
-  }
-
-  .cert-slot img {
-    width: 100%; /* Images always fill the single column */
-    height: auto; /* Let height adjust proportionally */
-    max-height: 250px; /* Prevent excessively tall images on very narrow screens */
+    position: relative;
   }
 }

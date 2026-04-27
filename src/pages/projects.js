@@ -29,12 +29,10 @@ const projects = [
   },
   {
     title: 'Home Lab',
-    badge: { label: 'Coming soon', cls: 'badge-soon' },
     description: 'Setting up a home lab to run virtual machines, cloud storage, and vulnerable machines for penetration testing.',
     link: '/homelab',
     linkLabel: 'Read more',
     external: false,
-    disabled: true,
     image: './homelab.png',
   },
   {
@@ -48,10 +46,8 @@ const projects = [
   {
     title: 'n8n automation for Malicious Browser Extensions Database',
     description: 'Created a workflow using n8n to automate the process of adding new entries to the Malicious Browser Extension Database, including fetching metadata and crx files from the Chrome Web Store.',
-    link: '/n8n_workflow_database',
+    link: '/n8n',
     linkLabel: 'Read More',
-    external: true,
-    disabled: true,
     image: './n8n.png',
   },
 ];

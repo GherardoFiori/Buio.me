@@ -1,0 +1,140 @@
+.homelab-page-container {
+  max-width: 1050px;
+  margin: 3rem auto;
+  padding: 0 2rem 4rem;
+}
+
+.homelab-main-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.03em;
+}
+
+.homelab-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+}
+
+.homelab-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.homelab-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.homelab-image-wrapper {
+  text-align: center;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homelab-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.homelab-image-spec {
+  max-width: 100%;
+  max-height: 420px;
+  width: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.homelab-image:hover,
+.homelab-image-spec:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.homelab-image-caption {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+.homelab-stacked-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem auto;
+  align-items: center;
+}
+
+.homelab-stacked-images .homelab-image-wrapper {
+  margin: 0;
+  width: 100%;
+}
+
+.homelab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.homelab-list li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.homelab-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .homelab-main-title {
+    font-size: 2rem;
+  }
+
+  .homelab-section {
+    padding: 1.5rem;
+  }
+
+  .homelab-section-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homelab-page-container {
+    padding: 0 1.25rem 3rem;
+  }
+
+  .homelab-main-title {
+    font-size: 1.75rem;
+  }
+}

@@ -54,9 +54,9 @@ const skills = [
   { icon: '/skills logo/grc.png', name: 'GRC' },
   { icon: '/skills logo/sophos.png', name: 'Sophos' },
   { icon: '/skills logo/tines.png', name: 'Tines' },
-  { icon: '/skills logo/crowdstrike.png', name: 'CrowdStrike' }
- // { icon: '/skills logo/fortinet.png', name: 'Fortinet' },
- // { icon: '/skills logo/automation.png', name: 'Automation' },
+  { icon: '/skills logo/crowdstrike.png', name: 'CrowdStrike' },
+  { icon: '/skills logo/fortinet.png', name: 'Fortinet' },
+  { icon: '/skills logo/n8n.png', name: 'Automation' }
 ];
 
 const pastEvents = [
@@ -75,7 +75,7 @@ const pastEvents = [
 ];
 
 const futureEvents = [
-  'WHY2025',
+  'WHY2026',
   'RomHack — Rome',
   'Bsides London',
   'Bsides Frankfurt',

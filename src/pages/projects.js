@@ -4,7 +4,6 @@ import '../css/projects.css';
 const projects = [
   {
     title: 'AI Detection of Malicious Browser Extensions',
-    badge: { label: 'Maintenance', cls: 'badge-maintenance' },
     description: 'A Python-based tool for analysing browser extensions by simply supplying a Store URL.',
     link: 'https://exterminai.com',
     linkLabel: 'Visit website',

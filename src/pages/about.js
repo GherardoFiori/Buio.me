@@ -59,11 +59,15 @@ const skills = [
   { icon: '/skills logo/n8n.png', name: 'Automation' }
 ];
 
+const speakerEvents = [
+  'Bsides Belfast 2026 - The Silent Risk in Your Browser: Detecting Malicious Extensions',
+];
+
 const pastEvents = [
   'Bsides Dublin 2026',
   'Bsides Galway 2026',
   'Dub|Sec Meetups',
-  'HackInBo — Bologna 2025',
+  'HackInBo - Bologna 2025',
   'Bsides Dublin 2025',
   'ZeroDays 2025 👥 Higher Score on my team',
   'Cyber Security AI & Software Development 2025',
@@ -76,14 +80,14 @@ const pastEvents = [
 
 const futureEvents = [
   'WHY2026',
-  'RomHack — Rome',
+  'RomHack - Rome',
   'Bsides London',
   'Bsides Frankfurt',
-  'Cbase — Berlin',
+  'Cbase - Berlin',
 ];
 
 const volunteering = [
-  'Naughty or Nice CTF — on the day helper',
+  'Naughty or Nice CTF - on the day helper',
   "Ethical Hacker Society's Event Organizer",
   'CTF on the day helper for Cyber Security students from France',
 ];
@@ -112,6 +116,10 @@ const About = () => {
       <p className="about-bio">
         I love attending information security conferences and CTF events. If it's reachable, you'll see me there.
       </p>
+            <p className="events-subheading">Speaker</p>
+      <ul className="events-list">
+        {speakerEvents.map((e, i) => <li key={i}>{e}</li>)}
+      </ul>
       <p className="events-subheading">Past events</p>
       <ul className="events-list">
         {pastEvents.map((e, i) => <li key={i}>{e}</li>)}

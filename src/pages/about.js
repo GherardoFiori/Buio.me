@@ -25,15 +25,54 @@ const TerminalHeading = () => {
   );
 };
 
-const certImages = Array.from({ length: 14 }, (_, i) => ({
-  src: `/certificates/cert${i + 1}.png`,
-  alt: `Certificate ${i + 1}`,
-}));
-
-const toolCertImages = Array.from({ length: 14 }, (_, i) => ({
-  src: `/toolcertificate/cert${i + 1}.png`,
-  alt: `Tool Certificate ${i + 1}`,
-}));
+const certificateGroups = [
+  {
+    id: 'professional-certifications',
+    title: 'Professional Certifications',
+    certificates: [
+      { src: '/toolcertificate/cert5.png', alt: 'Tines Core Certification' },
+      { src: '/toolcertificate/cert6.png', alt: 'Tines Advanced Certification' },
+      { src: '/certificates/cert7.png', alt: 'arcX Foundation Level Threat Intelligence Analyst Certification' },
+      { src: '/toolcertificate/cert7.png', alt: 'EU Cyber Academy Certified SME Cyber Security Officer (CSCSO)' },
+      { src: '/toolcertificate/cert8.png', alt: 'EU Cyber Academy Certified Ransomware Protection Officer (CRPO)' },
+    ],
+  },
+  {
+    id: 'vendor-technical-training',
+    title: 'Vendor Technical Training',
+    certificates: [
+      { src: '/toolcertificate/cert1.png', alt: 'Sophos Introduction to Sophos and Technical Training (ET01)' },
+      { src: '/toolcertificate/cert2.png', alt: 'Sophos Detection and Response Certified Engineer v5.5 (ET12)' },
+      { src: '/toolcertificate/cert3.png', alt: 'Sophos Central Endpoint Protection Certified Engineer v5.0 (ET15)' },
+      { src: '/toolcertificate/cert4.png', alt: 'Sophos Central Endpoint Protection Certified Technician v5.0 (S15)' },
+      { src: '/toolcertificate/cert9.png', alt: 'CrowdStrike Threat Hunter learning plan' },
+      { src: '/toolcertificate/cert10.png', alt: 'CrowdStrike Integrator learning plan' },
+      { src: '/toolcertificate/cert11.png', alt: 'CrowdStrike Incident Responder learning plan' },
+      { src: '/toolcertificate/cert12.png', alt: 'CrowdStrike Identity Specialist learning plan' },
+      { src: '/toolcertificate/cert13.png', alt: 'CrowdStrike Falcon Administrator learning plan' },
+      { src: '/certificates/cert14.png', alt: 'Microsoft Student SOC Program Foundations training' },
+      { src: '/certificates/cert12.png', alt: 'Google Cloud SOAR Analyst course' },
+      { src: '/certificates/cert9.png', alt: 'NVIDIA Fundamentals of Deep Learning course' },
+    ],
+  },
+  {
+    id: 'courses-and-learning-paths',
+    title: 'Courses and Learning Paths',
+    certificates: [
+      { src: '/certificates/cert1.png', alt: 'TryHackMe Introduction to Cyber Security learning path' },
+      { src: '/certificates/cert2.png', alt: 'TryHackMe Pre Security learning path' },
+      { src: '/certificates/cert3.png', alt: 'TryHackMe Complete Beginner learning path' },
+      { src: '/certificates/cert4.png', alt: 'TryHackMe Cyber Security 101 learning path' },
+      { src: '/certificates/cert5.png', alt: 'TryHackMe Web Fundamentals learning path' },
+      { src: '/certificates/cert6.png', alt: 'TryHackMe Jr Penetration Tester learning path' },
+      { src: '/certificates/cert10.png', alt: 'Top ATT&CK Techniques course' },
+      { src: '/certificates/cert11.png', alt: 'Foundations of Operationalizing MITRE ATT&CK v13 course' },
+      { src: '/certificates/cert13.png', alt: 'Intro to Splunk eLearning course' },
+      { src: '/toolcertificate/cert14.png', alt: 'Intro to DFIR: The Divide and Conquer Process course' },
+      { src: '/certificates/cert8.png', alt: 'Udemy Governance, Risk and Compliance (GRC) and Data Privacy course' },
+    ],
+  },
+];
 
 const skills = [
   { icon: '/skills logo/python.png', name: 'Python' },
@@ -149,27 +188,22 @@ const About = () => {
         ))}
       </div>
 
-      <h2 className="section-heading">Certificates</h2>
-      <div className="cert-grid">
-        {certImages.map((cert, i) => (
-          <div key={i} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>
-            <img src={cert.src} alt={cert.alt} />
+      {certificateGroups.map((group) => (
+        <section key={group.id} className="cert-section" aria-labelledby={group.id}>
+          <h2 id={group.id} className="section-heading">{group.title}</h2>
+          <div className="cert-grid">
+            {group.certificates.map((cert) => (
+              <div key={cert.src} className="cert-slot" onClick={() => setSelectedCert(cert)}>
+                <img src={cert.src} alt={cert.alt} />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-
-      <h2 className="section-heading">Tool Certificates</h2>
-      <div className="cert-grid">
-        {toolCertImages.map((cert, i) => (
-          <div key={i} className="cert-slot" onClick={() => setSelectedCert(cert.src)}>
-            <img src={cert.src} alt={cert.alt} />
-          </div>
-        ))}
-      </div>
+        </section>
+      ))}
 
       {selectedCert && (
         <div className="modal" onClick={() => setSelectedCert(null)}>
-          <img src={selectedCert} alt="Full Certificate" className="modal-img" />
+          <img src={selectedCert.src} alt={selectedCert.alt} className="modal-img" />
         </div>
       )}
     </div>
